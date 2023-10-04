@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Mago: IMagicCharacter
     {
-        private int health = 100;
+        private int health = 80;
 
         private List<IItem> items = new List<IItem>();
 
@@ -86,7 +86,7 @@ namespace RoleplayGame
 
         public void Cure()
         {
-            this.Health = 100;
+            this.Health = 80;
         }
 
         public void AddItem(IItem item)

@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Caballero: ICharacter
     {
-        private int health = 100;
+        private int health = 130;
 
         private List<IItem> items = new List<IItem>();
 

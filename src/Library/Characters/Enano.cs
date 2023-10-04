@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Enano: ICharacter
     {
-        private int health = 100;
+        private int health = 150;
 
         private List<IItem> items = new List<IItem>();
 

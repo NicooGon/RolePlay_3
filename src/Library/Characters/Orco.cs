@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Orco: ICharacter
     {
-        private int health = 100;
+        private int health = 120;
 
         private List<IItem> items = new List<IItem>();
 

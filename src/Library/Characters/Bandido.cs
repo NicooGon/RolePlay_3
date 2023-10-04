@@ -3,7 +3,7 @@ namespace RoleplayGame
 {
     public class Bandido: ICharacter
     {
-        private int health = 100;
+        private int health = 90;
 
         private List<IItem> items = new List<IItem>();
 

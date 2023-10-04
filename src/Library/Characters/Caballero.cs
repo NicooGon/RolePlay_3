@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Archer: ICharacter
+    public class Caballero: ICharacter
     {
         private int health = 100;
 
         private List<IItem> items = new List<IItem>();
 
-        public Archer(string name)
+        public Caballero(string name)
         {
             this.Name = name;
             
-            this.AddItem(new Bow());
-            this.AddItem(new Helmet());
+            this.AddItem(new Espada());
+            this.AddItem(new Armadura());
         }
 
         public string Name { get; set; }
@@ -71,7 +71,7 @@ namespace RoleplayGame
 
         public void Cure()
         {
-            this.Health = 100;
+            this.Health = 130;
         }
 
         public void AddItem(IItem item)

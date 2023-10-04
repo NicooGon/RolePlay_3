@@ -1,12 +1,12 @@
 namespace RoleplayGame
 {
-    public class SpellOne: ISpell
+    public class HechizoUno: ISpell
     {
         public int AttackValue
         {
             get
             {
-                return 70;
+                return 85;
             }
         }
 
@@ -14,7 +14,7 @@ namespace RoleplayGame
         {
             get
             {
-                return 70;
+                return 50;
             }
         }
     }

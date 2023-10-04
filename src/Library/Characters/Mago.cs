@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Knight: ICharacter
+    public class Mago: IMagicCharacter
     {
         private int health = 100;
 
         private List<IItem> items = new List<IItem>();
 
-        public Knight(string name)
+        private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
+
+        public Mago(string name)
         {
             this.Name = name;
             
-            this.AddItem(new Sword());
-            this.AddItem(new Armor());
-            this.AddItem(new Shield());
+            this.AddItem(new Staff());
         }
 
         public string Name { get; set; }
@@ -30,6 +30,13 @@ namespace RoleplayGame
                         value += (item as IAttackItem).AttackValue;
                     }
                 }
+                foreach (IMagicalItem item in this.magicalItems)
+                {
+                    if (item is IMagicalAttackItem)
+                    {
+                        value += (item as IMagicalAttackItem).AttackValue;
+                    }
+                }
                 return value;
             }
         }
@@ -44,6 +51,13 @@ namespace RoleplayGame
                     if (item is IDefenseItem)
                     {
                         value += (item as IDefenseItem).DefenseValue;
+                    }
+                }
+                foreach (IMagicalItem item in this.magicalItems)
+                {
+                    if (item is IMagicalDefenseItem)
+                    {
+                        value += (item as IMagicalDefenseItem).DefenseValue;
                     }
                 }
                 return value;
@@ -84,5 +98,16 @@ namespace RoleplayGame
         {
             this.items.Remove(item);
         }
+
+        public void AddItem(IMagicalItem item)
+        {
+            this.magicalItems.Add(item);
+        }
+
+        public void RemoveItem(IMagicalItem item)
+        {
+            this.magicalItems.Remove(item);
+        }
+
     }
 }

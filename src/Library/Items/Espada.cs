@@ -1,12 +1,12 @@
 namespace RoleplayGame
 {
-    public class Axe: IAttackItem
+    public class Espada: IAttackItem
     {
         public int AttackValue 
         {
             get
             {
-                return 25;
+                return 20;
             } 
         }
     }

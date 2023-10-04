@@ -1,12 +1,12 @@
 namespace RoleplayGame
 {
-    public class Shield: IDefenseItem
+    public class Escudo: IDefenseItem
     {
         public int DefenseValue
         {
             get
             {
-                return 14;
+                return 25;
             }
         }
     }

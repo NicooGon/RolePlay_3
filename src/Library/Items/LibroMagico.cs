@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class LibroMagico: IMagicalAttackItem, IMagicalDefenseItem
+    public class LibroMagico : IItem, IMagicalAttackItem, IMagicalDefenseItem
     {
         private List<ISpell> spells = new List<ISpell>();
-        
+
         public int AttackValue
         {
             get
@@ -41,5 +42,11 @@ namespace RoleplayGame
         {
             this.spells.Remove(spell);
         }
+         public List<ISpell> Spells
+        {
+            get { return spells; }
+        }
+        
+    
     }
 }

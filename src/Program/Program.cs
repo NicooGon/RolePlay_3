@@ -12,14 +12,19 @@ namespace Program
             book.AddSpell(new HechizoUno());
 
             Mago Rasagast = new Mago("Rasagast");
+
             Rasagast.AddItem(book);
 
             Enano Thorin = new Enano("Thorin");
 
             Console.WriteLine($"Thorin has ❤️ {Thorin.Health}");
-            Console.WriteLine($"Rasagast attacks Thorin with ⚔️ {Rasagast.AttackValue}");
+            int staffDamage = Rasagast.AttackValue; 
+            int spellDamage = Rasagast.GetTotalSpellDamage();
+            int totalDamage = staffDamage + spellDamage;
 
-            Thorin.ReceiveAttack(Rasagast.AttackValue);
+            Console.WriteLine($"Rasagast attacks Thorin with ⚔️ {totalDamage} (Staff: {staffDamage}, Spell: {spellDamage})");
+
+            Thorin.ReceiveAttack(totalDamage);
 
             Console.WriteLine($"Thorin has ❤️ {Thorin.Health}");
 

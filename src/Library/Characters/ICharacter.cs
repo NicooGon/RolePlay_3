@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public interface ICharacter
+    public interface  ICharacter
     {
         string Name { get; set; }
 

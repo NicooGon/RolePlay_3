@@ -1,87 +1,22 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Enano: ICharacter
+
+    public class Enano: Personaje
     {
-        private int health = 150;
-
-        private List<IItem> items = new List<IItem>();
-
-        public Enano(string name)
+        public override int Health 
         {
-            this.Name = name;
-            
-            this.AddItem(new Hacha());
-            this.AddItem(new Escudo());
+            get {return 150;}
+            set
+            {
+            }
+            }   
+                public Enano (string name) : base(name)
+                {
+                    AddItem(new Hacha());
+                    AddItem(new Escudo());
+                }
+            }
         }
-
-        public string Name { get; set; }
+       
         
-        public int AttackValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (IItem item in this.items)
-                {
-                    if (item is IAttackItem)
-                    {
-                        value += (item as IAttackItem).AttackValue;
-                    }
-                }
-                return value;
-            }
-        }
-
-        public int DefenseValue
-        {
-            get
-            {
-                int value = 0;
-                foreach (IItem item in this.items)
-                {
-                    if (item is IDefenseItem)
-                    {
-                        value += (item as IDefenseItem).DefenseValue;
-                    }
-                }
-                return value;
-            }
-        }
-
-        public int Health
-        {
-            get
-            {
-                return this.health;
-            }
-            private set
-            {
-                this.health = value < 0 ? 0 : value;
-            }
-        }
-
-        public void ReceiveAttack(int power)
-        {
-            if (this.DefenseValue < power)
-            {
-                this.Health -= power - this.DefenseValue;
-            }
-        }
-
-        public void Cure()
-        {
-            this.Health = 150;
-        }
-
-        public void AddItem(IItem item)
-        {
-            this.items.Add(item);
-        }
-
-        public void RemoveItem(IItem item)
-        {
-            this.items.Remove(item);
-        }
-    }
-}

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Mago : Personaje
+    public class Mago : Personaje, Heroe
     {
         private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
 

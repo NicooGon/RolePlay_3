@@ -2,7 +2,7 @@ using System.Collections.Generic;
 namespace RoleplayGame
 {
 
-    public class Enano: Personaje
+    public class Enano: Personaje, Heroe
     {
         public override int Health 
         {

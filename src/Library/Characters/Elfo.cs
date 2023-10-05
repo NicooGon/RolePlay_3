@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 namespace RoleplayGame
 {
-    public class Elfo: Personaje
+    public class Elfo: Personaje, Heroe
     {
         public override int Health 
         {

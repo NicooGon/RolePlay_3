@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace RoleplayGame;
 
-    public class Orco: Personaje
+    public class Orco: Personaje, Enemigo
     {
         public override int Health 
         {

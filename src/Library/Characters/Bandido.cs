@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Bandido : Personaje
+    public class Bandido : Personaje, Enemigo
     {
         public override int Health
         {

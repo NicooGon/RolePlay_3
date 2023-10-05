@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Caballero: Personaje
+    public class Caballero: Personaje, Heroe
     {
         public override int Health 
         {

@@ -9,7 +9,8 @@ namespace RoleplayGame;
             set
             {
             }
-            }   
+            } 
+        public int VP {get; set;} = 100;  
         public Orco (string name) : base(name)
         {
             AddItem(new Garrote());

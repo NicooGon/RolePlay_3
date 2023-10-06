@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace RoleplayGame
 {
@@ -10,7 +12,7 @@ namespace RoleplayGame
 
         public abstract int Health { get;set; }
 
-         public int AttackValue
+        public int AttackValue
         {
             get
             {
@@ -41,10 +43,6 @@ namespace RoleplayGame
                 return value;
             }
         }
-
-
-
-
         protected Personaje(string name)
         {
             Name = name;
@@ -61,7 +59,7 @@ namespace RoleplayGame
 
         public void Cure()
         {
-
+            Health = 80;
         }
 
         public void AddItem(IItem item)

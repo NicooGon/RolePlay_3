@@ -31,6 +31,11 @@ namespace Program
             Thorin.Cure();
 
             Console.WriteLine($"Someone cured Thorin. Thorin now has ❤️ {Thorin.Health}");
+
+            Hobbit Gollum = new Hobbit("Gollum");
+            
+            Encuentro Encuentro1 = new Encuentro();
+            Encuentro1.DoEncounter(); 
         }
     }
 }

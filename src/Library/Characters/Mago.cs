@@ -8,10 +8,10 @@ namespace RoleplayGame
 
         public override int Health
         {
-            get { return 100; }
+            get { return 85; }
             set { }
         }
-
+        public int Puntos {get;}
         public Mago(string name) : base(name)
         {
             AddItem(new Staff());

@@ -10,11 +10,11 @@ namespace RoleplayGame
         { 
         }
         }
+        public int Puntos {get;}
         public Caballero (string name) : base(name)
         {
             AddItem(new Espada());
-            AddItem (new Armadura());
-
+            AddItem(new Armadura());
         }
     }
 }

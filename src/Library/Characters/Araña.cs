@@ -2,20 +2,20 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Bandido : Personaje, Enemigo
+    public class Araña : Personaje, Enemigo
     {
         public override int Health
         {
-            get { return 90; }
+            get { return 70; }
             set
         {
         }
         }
         public int VP {get; set;} = 100;
-        public Bandido(string name) : base(name)
+        public Araña(string name) : base(name)
         {
-            AddItem(new Daga());
-            AddItem(new Escudo());
+            AddItem(new Telaraña());
+            AddItem(new Picadura());
         }
     }
 }

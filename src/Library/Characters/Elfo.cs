@@ -11,12 +11,13 @@ namespace RoleplayGame
             set
             {
             }
-            }   
-                public Elfo (string name) : base(name)
-                {
-                    AddItem(new Arco());
-                    AddItem(new Traje());
-                }
             }
+        public int Puntos {get;}
+        public Elfo (string name) : base(name)
+        {
+        AddItem(new Arco());
+        AddItem(new Traje());
         }
+    }
+}
        

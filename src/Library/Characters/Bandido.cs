@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Bandido : Personaje, Enemigo
+    public class Bandido : Personaje
     {
         public override int Health
         {
@@ -11,7 +11,8 @@ namespace RoleplayGame
         {
         }
         }
-        public int VP {get; set;} = 100;
+        public override int VP {get; set;} = 2;
+    
         public Bandido(string name) : base(name)
         {
             AddItem(new Daga());

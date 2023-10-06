@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Caballero: Personaje, Heroe
+    public class Caballero: Personaje
     {
         public override int Health 
         {
@@ -10,7 +10,7 @@ namespace RoleplayGame
         { 
         }
         }
-        public int Puntos {get;}
+        public override int VP {get; set;} = 0;
         public Caballero (string name) : base(name)
         {
             AddItem(new Espada());

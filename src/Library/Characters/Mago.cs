@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Mago : Personaje, Heroe
+    public class Mago : Personaje
     {
         private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
 
@@ -11,7 +11,7 @@ namespace RoleplayGame
             get { return 85; }
             set { }
         }
-        public int Puntos {get;}
+        public override int VP {get; set;} = 0;
         public Mago(string name) : base(name)
         {
             AddItem(new Staff());

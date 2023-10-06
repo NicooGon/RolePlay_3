@@ -12,6 +12,8 @@ namespace RoleplayGame
 
         public abstract int Health { get;set; }
 
+        public abstract int VP { get; set; } 
+
         public int AttackValue
         {
             get
@@ -71,5 +73,6 @@ namespace RoleplayGame
         {
             items.Remove(item);
         }
+       
     }
 }

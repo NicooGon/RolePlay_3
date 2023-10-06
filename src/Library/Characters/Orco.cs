@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 namespace RoleplayGame;
 
-    public class Orco: Personaje, Enemigo
+    public class Orco: Personaje
     {
         public override int Health 
         {
@@ -10,7 +10,7 @@ namespace RoleplayGame;
             {
             }
             } 
-        public int VP {get; set;} = 100;  
+        public override int VP {get; set;} = 4; 
         public Orco (string name) : base(name)
         {
             AddItem(new Garrote());

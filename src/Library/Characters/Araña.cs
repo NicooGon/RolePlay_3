@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Araña : Personaje, Enemigo
+    public class Araña : Personaje
     {
         public override int Health
         {
@@ -11,8 +11,8 @@ namespace RoleplayGame
         {
         }
         }
-        public int VP {get; set;} = 100;
-        public Araña(string name) : base(name)
+        public override int VP {get; set;} = 3;
+        public Araña (string name) : base(name)
         {
             AddItem(new Telaraña());
             AddItem(new Picadura());

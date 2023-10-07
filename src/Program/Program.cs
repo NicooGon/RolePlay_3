@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Net;
+using System.Collections.Generic;
 using RoleplayGame;
 
 namespace Program
@@ -8,33 +8,41 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            LibroMagico book = new LibroMagico();
-            book.AddSpell(new HechizoUno());
-            book.AddSpell(new HechizoUno());
 
+            List<Personaje> heroes = new List<Personaje>();
+            List<Personaje> enemigos = new List<Personaje>();
+
+          
             Mago Rasagast = new Mago("Rasagast");
-
-            Rasagast.AddItem(book);
+            heroes.Add(Rasagast);
 
             Enano Thorin = new Enano("Thorin");
+            heroes.Add(Thorin);
 
-            Console.WriteLine($"Thorin has ❤️ {Thorin.Health}");
-            int staffDamage = Rasagast.AttackValue; 
-            int spellDamage = Rasagast.GetTotalSpellDamage();
-            int totalDamage = staffDamage + spellDamage;
+            Caballero Gervacio= new Caballero("Gervacio");
+            heroes.Add (Gervacio);
 
-            Console.WriteLine($"Rasagast attacks Thorin with ⚔️ {totalDamage} (Staff: {staffDamage}, Spell: {spellDamage})");
-
-            Thorin.ReceiveAttack(totalDamage);
-
-            Console.WriteLine($"Thorin has ❤️ {Thorin.Health}");
-
-            Thorin.Cure();
-
-            Console.WriteLine($"Someone cured Thorin. Thorin now has ❤️ {Thorin.Health}");
+            Elfo Lego= new Elfo("Lego");
+            heroes.Add (Lego);
 
             Hobbit Gollum = new Hobbit("Gollum");
-          
-        }
+            enemigos.Add(Gollum);
+
+            Araña Jerry = new Araña("Araña");
+            enemigos.Add(Jerry);
+
+            Bandido Vale = new Bandido("Bandido");
+            enemigos.Add(Vale);
+
+            Orco Hervi = new Orco("Orco");
+            enemigos.Add(Hervi);
+
+            Console.WriteLine("El encuentro ha comenzado");
+
+            Encounter encounter = new Encounter(heroes, enemigos);
+            encounter.DoEncounter();
+
+            Console.WriteLine("Encuentro terminado.");
     }
+}
 }

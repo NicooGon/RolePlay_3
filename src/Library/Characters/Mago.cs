@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.Win32.SafeHandles;
 
 namespace RoleplayGame
 {
@@ -46,6 +47,7 @@ namespace RoleplayGame
                 }
             }
             return spellDamage;
-        }
+     
+    }
     }
 }

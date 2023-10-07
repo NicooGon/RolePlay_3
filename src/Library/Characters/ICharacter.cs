@@ -18,5 +18,7 @@ namespace RoleplayGame
 
         void ReceiveAttack(int power);
         int VP {get; set;}
+
+
     }
 }

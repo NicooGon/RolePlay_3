@@ -10,7 +10,7 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public abstract int Health { get;set; }
+        public abstract int Health { get; set; }
 
         public abstract int VP { get; set; } 
 

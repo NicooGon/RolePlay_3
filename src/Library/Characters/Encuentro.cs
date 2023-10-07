@@ -32,6 +32,9 @@ namespace RoleplayGame
                         Console.WriteLine($"{enemy.Name} ataca a {hero.Name}.");
                         hero.ReceiveAttack(enemy.AttackValue);
 
+                        Console.WriteLine($"{hero.Name} ataca a {enemy.Name}.");
+                        enemy.ReceiveAttack(hero.AttackValue);
+
                         if (hero.Health <= 0)
                         {
                             Console.WriteLine($"Ha muerto {hero.Name}");

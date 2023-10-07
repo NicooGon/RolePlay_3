@@ -7,14 +7,10 @@ namespace RoleplayGame
     {
         private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
 
-        public override int Health
-        {
-            get { return 85; }
-            set { }
-        }
         public override int VP {get; set;} = 0;
         public Mago(string name) : base(name)
         {
+            Health = 85;
             AddItem(new Staff());
         }
         public void AddItem(IItem item) 

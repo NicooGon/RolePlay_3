@@ -41,8 +41,8 @@ namespace Program
 
             Encounter encounter = new Encounter(heroes, enemigos);
             encounter.DoEncounter();
-
+            
             Console.WriteLine("Encuentro terminado.");
+        }
     }
-}
 }

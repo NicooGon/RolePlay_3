@@ -1,66 +1,39 @@
 using System;
 using System.Collections.Generic;
 
-namespace RoleplayGame
-{
+namespace RoleplayGame;
+
     public class Encounter
     {
-    
-            List<Personaje> heroes;
-            List<Personaje> enemigos; 
+        private List<Personaje> heroes;
+        private List<Personaje> enemies;
 
-        public Encounter(List<Personaje> heroes, List<Personaje> enemigos)
+        public Encounter(List<Personaje> heroes, List<Personaje> enemies)
         {
             this.heroes = heroes;
-            this.enemigos = enemigos;
+            this.enemies = enemies;
         }
 
         public void DoEncounter()
         {
-            int numHeroes = heroes.Count;
-            int numEnemies = enemigos.Count;
+            Random random = new Random();
 
-            while (numEnemies > 0 && numHeroes > 0)
+            while (heroes.Count > 0 && enemies.Count > 0)
             {
-                for (int i = 0; i < Math.Max(numHeroes, numEnemies); i++)
+                Personaje hero = heroes[random.Next(0, heroes.Count)];
+                Personaje enemy = enemies[random.Next(0, enemies.Count)];
+
+                Console.WriteLine($"{hero.Name} attacks {enemy.Name}.");
+                enemy.ReceiveAttack(hero.AttackValue);
+
+                if (enemy.Health <= 0)
                 {
-                    if (i < numHeroes && i < numEnemies)
-                    {
-                        Personaje enemy = enemigos[i];
-                        Personaje hero = heroes[i];
-
-                        Console.WriteLine($"{enemy.Name} ataca a {hero.Name}.");
-                        hero.ReceiveAttack(enemy.AttackValue);
-
-                        Console.WriteLine($"{hero.Name} ataca a {enemy.Name}.");
-                        enemy.ReceiveAttack(hero.AttackValue);
-
-                        if (hero.Health <= 0)
-                        {
-                            Console.WriteLine($"Ha muerto {hero.Name}");
-                            heroes.Remove(hero);
-                            numHeroes--;
-                            i--; 
-                        }
-                       
-                        if (enemy.Health <= 0)
-                            {
-                                Console.WriteLine($"Ha muerto {enemy.Name}");
-                                enemigos.Remove(enemy);
-                                numEnemies--;
-                                i--;
-                            }
-                        }
-                    }
-                }
-
-                foreach (Personaje hero in heroes)
-                {
-                    if (hero.VP >= 5)
-                    {
-                        hero.Cure();
-                    }
+                    Console.WriteLine($"{enemy.Name} has been defeated!");
+                    enemies.Remove(enemy);
                 }
             }
         }
     }
+
+
+

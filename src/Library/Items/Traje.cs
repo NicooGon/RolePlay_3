@@ -5,7 +5,7 @@ namespace RoleplayGame;
         public int DefenseValue
         {
             get{
-                return 25;
+                return 10;
             }
         }
     }

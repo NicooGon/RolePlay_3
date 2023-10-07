@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
@@ -10,7 +11,12 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public abstract int Health { get; set; }
+        private int _health;
+        public virtual int Health
+        {
+            get { return _health; }
+            set { _health = value; }
+        }
 
         public abstract int VP { get; set; } 
 
@@ -50,15 +56,21 @@ namespace RoleplayGame
             Name = name;
         }
 
-        public void ReceiveAttack(int power)
-        {
-            int damage = power - DefenseValue;
-            if (damage > 0)
-            {
-                Health -= damage;
-            }
-        }
+    public virtual void ReceiveAttack(int power)
+    {
+        int damage = Math.Max(0, power - DefenseValue);
 
+        if (damage > 0)
+        {
+            Health = Health - damage;
+            Console.WriteLine($"{Name} received {damage} damage. New health: {Health}");
+        }
+        else
+        {
+            Console.WriteLine($"{Name} defended the attack. Health unchanged: {Health}");
+        }
+    }
+        
         public void Cure()
         {
             Health = 80;
@@ -73,6 +85,5 @@ namespace RoleplayGame
         {
             items.Remove(item);
         }
-       
     }
 }

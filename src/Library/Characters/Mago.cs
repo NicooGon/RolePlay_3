@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks.Dataflow;
 using Microsoft.Win32.SafeHandles;
 
 namespace RoleplayGame
@@ -11,7 +12,12 @@ namespace RoleplayGame
         public Mago(string name) : base(name)
         {
             Health = 85;
+            ISpell spell = new HechizoUno();
+            LibroMagico libroMagico = new LibroMagico();
+            libroMagico.AddSpell(spell);
+
             AddItem(new Staff());
+            AddItem(libroMagico);
         }
         public void AddItem(IItem item) 
         {
@@ -43,7 +49,28 @@ namespace RoleplayGame
                 }
             }
             return spellDamage;
-     
-    }
+        }
+
+        public int GetTotalDamage()
+        {
+            int totalDamage = 0;
+
+            foreach (IMagicalItem item in magicalItems)
+            {
+                if (item is IMagicalAttackItem magicalAttackItem)
+                {
+                    totalDamage += magicalAttackItem.AttackValue;
+                }
+            }
+            
+            foreach (IItem item in items)
+            {
+                if (item is LibroMagico libroMagico)
+                {
+                    totalDamage += libroMagico.AttackValue;
+                }
+            }
+            return totalDamage;
+        }
     }
 }

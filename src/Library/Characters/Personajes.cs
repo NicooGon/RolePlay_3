@@ -7,7 +7,7 @@ namespace RoleplayGame
 {
     public abstract class Personaje : ICharacter
     {
-        private List<IItem> items = new List<IItem>();
+        public List<IItem> items = new List<IItem>();
 
         public string Name { get; set; }
 
@@ -30,6 +30,10 @@ namespace RoleplayGame
                     if (item is IAttackItem attackItem)
                     {
                         value += attackItem.AttackValue;
+                    }
+                    if (item is IMagicalAttackItem magicalAttackItem)
+                    {
+                        value += magicalAttackItem.AttackValue;
                     }
                 }
                 return value;

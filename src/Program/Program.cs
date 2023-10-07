@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks.Dataflow;
 using RoleplayGame;
 
 namespace Program
@@ -11,7 +12,6 @@ namespace Program
 
             List<Personaje> heroes = new List<Personaje>();
             List<Personaje> enemigos = new List<Personaje>();
-
           
             Mago Rasagast = new Mago("Rasagast");
             heroes.Add(Rasagast);

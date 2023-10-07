@@ -23,10 +23,19 @@ namespace RoleplayGame;
                 Personaje hero = heroes[random.Next(0, heroes.Count)];
                 Personaje enemy = enemies[random.Next(0, enemies.Count)];
 
+                Console.WriteLine($"{enemy.Name} attacks {hero.Name}.");
+                hero.ReceiveAttack(enemy.AttackValue);
+
+                if (hero.Health <= 0)
+                {
+                    Console.WriteLine($"{hero.Name} has been defeated!");
+                    heroes.Remove(hero);
+                }
+                
                 Console.WriteLine($"{hero.Name} attacks {enemy.Name}.");
                 enemy.ReceiveAttack(hero.AttackValue);
-
-                if (enemy.Health <= 0)
+                
+                if(enemy.Health <= 0)
                 {
                     Console.WriteLine($"{enemy.Name} has been defeated!");
                     enemies.Remove(enemy);

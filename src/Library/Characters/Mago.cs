@@ -7,10 +7,9 @@ namespace RoleplayGame
     public class Mago : Personaje
     {
         private List<IMagicalItem> magicalItems = new List<IMagicalItem>();
-
-        public override int VP {get; set;} = 0;
         public Mago(string name) : base(name)
         {
+            VP = 0;
             Health = 85;
             ISpell spell = new HechizoUno();
             LibroMagico libroMagico = new LibroMagico();
@@ -62,7 +61,7 @@ namespace RoleplayGame
                     totalDamage += magicalAttackItem.AttackValue;
                 }
             }
-            
+
             foreach (IItem item in items)
             {
                 if (item is LibroMagico libroMagico)

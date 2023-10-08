@@ -3,9 +3,9 @@ namespace RoleplayGame;
 
     public class Orco: Personaje
     {
-        public override int VP {get; set;} = 4; 
         public Orco (string name) : base(name)
         {
+            VP = 4;
             Health = 120;
             AddItem(new Garrote());
             AddItem(new Casco());

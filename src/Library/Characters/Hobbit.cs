@@ -5,9 +5,9 @@ namespace RoleplayGame;
 
     public class Hobbit : Personaje
     {
-        public override int VP {get; set;} = 3;
         public Hobbit (string name) : base (name)
         {
+            VP = 3;
             Health = 110;
             AddItem(new Anillo());
             AddItem(new Dardo());

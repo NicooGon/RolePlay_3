@@ -17,8 +17,12 @@ namespace RoleplayGame
             get { return _health; }
             set { _health = value; }
         }
-
-        public abstract int VP { get; set; } 
+        private int _vp;
+        public virtual int VP
+        {
+            get { return _vp; }
+            set { _vp = value; }
+        }
 
         public int AttackValue
         {

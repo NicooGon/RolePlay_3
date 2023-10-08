@@ -28,13 +28,13 @@ namespace Program
             Hobbit Gollum = new Hobbit("Gollum");
             enemigos.Add(Gollum);
 
-            Araña Jerry = new Araña("Araña");
-            enemigos.Add(Jerry);
+            Araña araña = new Araña("Araña");
+            enemigos.Add(araña);
 
-            Bandido Vale = new Bandido("Bandido");
+            Bandido Vale = new Bandido("Vale");
             enemigos.Add(Vale);
 
-            Orco Hervi = new Orco("Orco");
+            Orco Hervi = new Orco("Hervi");
             enemigos.Add(Hervi);
 
             Console.WriteLine("El encuentro ha comenzado");
@@ -43,6 +43,7 @@ namespace Program
             encounter.DoEncounter();
             
             Console.WriteLine("Encuentro terminado.");
+            
         }
     }
 }

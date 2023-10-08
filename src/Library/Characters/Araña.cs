@@ -4,9 +4,9 @@ namespace RoleplayGame
 {
     public class Araña : Personaje
     {
-        public override int VP {get; set;} = 3;
         public Araña (string name) : base(name)
         {
+            VP = 3;
             Health = 70;
             AddItem(new Telaraña());
             AddItem(new Picadura());

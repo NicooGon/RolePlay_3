@@ -63,7 +63,6 @@ namespace Test.Library
             {
                 new Hobbit("Gollum"),
                 new Araña("Araña")
-                
             };
 
             List<Personaje> enemigos = new List<Personaje>

@@ -38,15 +38,14 @@ namespace Test.Library
         {
             List<Personaje> heroes = new List<Personaje>
             {
-                new Caballero("Gervacio"),
-                new Elfo("Lego")
-            
+                new Hobbit("Gollum"),
+                new Araña("Araña")
             };
 
             List<Personaje> enemigos = new List<Personaje>
             {
-                new Hobbit("Gollum"),
-                new Araña("Araña")
+                new Caballero("Gervacio"),
+                new Elfo("Lego")
             };
 
             Encounter encounter = new Encounter(heroes, enemigos);
@@ -61,14 +60,14 @@ namespace Test.Library
         {
             List<Personaje> heroes = new List<Personaje>
             {
-                new Hobbit("Gollum"),
-                new Araña("Araña")
+                new Caballero("Gervacio"),
+                new Elfo("Lego")
             };
 
             List<Personaje> enemigos = new List<Personaje>
             {
-                new Caballero("Gervacio"),
-                new Elfo("Lego")
+                new Hobbit("Gollum"),
+                new Araña("Araña")
             };
 
             Encounter encounter = new Encounter(heroes, enemigos);

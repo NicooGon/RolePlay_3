@@ -81,7 +81,7 @@ namespace RoleplayGame
         
         public void Cure()
         {
-            Health = 80;
+            Health += 50;
         }
 
         public void AddItem(IItem item)

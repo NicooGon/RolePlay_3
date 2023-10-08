@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks.Dataflow;
 using RoleplayGame;
 
 namespace Program
@@ -41,8 +40,6 @@ namespace Program
 
             Encounter encounter = new Encounter(heroes, enemigos);
             encounter.DoEncounter();
-            
-            Console.WriteLine("Encuentro terminado.");
             
         }
     }
